@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成语互动乐园</title>
+     <!-- 引入同级目录的CSS文件 -->
+     <link rel="stylesheet" href="
+http://sua5r3tva.hn-bkt.clouddn.com/style.css?e=1743916482&token=dy7uNAvvR1luVD5dDSMorqg7Ze1b9-F2my6Yxdwq:1tnfcowzuxdhWtholjtAJeJUHsE=">  
+
+<script src="http://sua5r3tva.hn-bkt.clouddn.com/chengyu.js?e=1743917020&token=dy7uNAvvR1luVD5dDSMorqg7Ze1b9-F2my6Yxdwq:QhM7p8Dfw71VjGmO-LlXrNkwbzE="></script>
+
+</head>
+<body>
+    <audio id="correctSound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3"></audio>
+    <audio id="wrongSound" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3"></audio>
+    <audio id="bgm" loop src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-whoosh-668.mp3"></audio>
+
+    <div class="container">
+        <h1>成语互动乐园</h1>
+        
+        <div class="game-area">
+            <div class="idiom-display" id="currentChar"></div>
+            <div class="question" id="question"></div>
+            <div class="hint" id="hint"></div>
+            <div class="options" id="options"></div>
+            <div class="input-area" id="inputArea">
+                <input type="text" id="userInput" placeholder="输入答案" autofocus>
+                <button onclick="checkAnswer()">提交</button>
+            </div>
+            <div class="result" id="result"></div>
+            
+            <div class="score-container">
+                <div class="score-info">
+                    <div>得分: <span class="score-value" id="score">0</span></div>
+                    <div>总数: <span class="score-value" id="totalCount">0</span></div>
+                    <div>剩余: <span class="score-value" id="remainingCount">0</span></div>
+                    <div class="session-stats">
+                        <span style="color: var(--success);">✓<span id="sessionCorrect">0</span></span>
+                        <span style="margin-left: 10px; color: var(--error);">✗<span id="sessionWrong">0</span></span>
+                    </div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="mode-switcher">
+                    <button class="mode-btn active" onclick="setMode(1)">前补</button>
+                    <button class="mode-btn" onclick="setMode(2)">后补</button>
+                    <button class="mode-btn" onclick="setMode(3)">释义</button>
+                    <button class="mode-btn" onclick="setMode(4)">补全</button>
+                    <button class="reset-btn" onclick="confirmReset()">重置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    
+</body>
+</html>
